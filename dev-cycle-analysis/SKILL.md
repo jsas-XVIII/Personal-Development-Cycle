@@ -1,6 +1,6 @@
 ---
 name: dev-cycle-analysis
-description: First step of the development cycle. Use this skill at the start of any coding session, before planning, implementing, or making any changes. Triggers when the user says things like "let's start a new session", "I want to work on X", "read the project", "get context", or begins describing a feature or change they want to make. This skill must run before dev-cycle-planning. Do not suggest any changes during this step.
+description: "[Step 1/7 — Core Cycle] First step of the development cycle. Use this skill at the start of any coding session, before planning, implementing, or making any changes. Triggers when the user says things like "let's start a new session", "I want to work on X", "read the project", "get context", or begins describing a feature or change they want to make. This skill must run before dev-cycle-planning. Do not suggest any changes during this step.
 ---
 
 # Development Cycle: Analysis

@@ -1,6 +1,6 @@
 ---
 name: dev-cycle-refactor-test-coverage
-description: Refactor variant of the development cycle focused on identifying and filling gaps in automated test coverage. Use this skill when the user wants to improve test coverage, find untested code paths, or strengthen weak tests. Triggers when the user says things like "test coverage", "missing tests", "improve tests", "find untested code", "strengthen the test suite", "test coverage pass", or initiates a refactor session focused on testing. Always runs through the full development cycle. Do not write tests during analysis — produce findings first.
+description: "[Refactor 5/5 — runs full 7-step cycle] Refactor variant of the development cycle focused on identifying and filling gaps in automated test coverage. Use this skill when the user wants to improve test coverage, find untested code paths, or strengthen weak tests. Triggers when the user says things like "test coverage", "missing tests", "improve tests", "find untested code", "strengthen the test suite", "test coverage pass", or initiates a refactor session focused on testing. Always runs through the full development cycle. Do not write tests during analysis — produce findings first.
 ---
 
 # Development Cycle: Refactor — Missing Test Coverage

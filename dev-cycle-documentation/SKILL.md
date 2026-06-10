@@ -1,6 +1,6 @@
 ---
 name: dev-cycle-documentation
-description: Fourth step of the development cycle. Use this skill after implementation is complete and all tests are passing. Triggers when the user says things like "add comments", "document the changes", "update comments", "let's do documentation", or transitions from completed implementation. Requires dev-cycle-implementation to have been completed. Do not modify any logic or tests during this step.
+description: "[Step 4/7 — Core Cycle] Fourth step of the development cycle. Use this skill after implementation is complete and all tests are passing. Triggers when the user says things like "add comments", "document the changes", "update comments", "let's do documentation", or transitions from completed implementation. Requires dev-cycle-implementation to have been completed. Do not modify any logic or tests during this step.
 ---
 
 # Development Cycle: Documentation

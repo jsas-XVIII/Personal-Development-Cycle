@@ -1,6 +1,6 @@
 ---
 name: dev-cycle-refactor-bug-hunting
-description: Refactor variant of the development cycle focused on finding bugs, logic errors, edge cases, and fragile code. Use this skill when the user wants to proactively hunt for bugs rather than react to them. Triggers when the user says things like "bug hunting", "look for bugs", "find edge cases", "fragile code review", "logic errors", "let's find what's broken", or initiates a refactor session focused on correctness and reliability. Always runs through the full development cycle. Do not fix anything during analysis — produce findings first.
+description: "[Refactor 4/5 — runs full 7-step cycle] Refactor variant of the development cycle focused on finding bugs, logic errors, edge cases, and fragile code. Use this skill when the user wants to proactively hunt for bugs rather than react to them. Triggers when the user says things like "bug hunting", "look for bugs", "find edge cases", "fragile code review", "logic errors", "let's find what's broken", or initiates a refactor session focused on correctness and reliability. Always runs through the full development cycle. Do not fix anything during analysis — produce findings first.
 ---
 
 # Development Cycle: Refactor — Bug Hunting

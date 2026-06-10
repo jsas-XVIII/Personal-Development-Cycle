@@ -50,11 +50,11 @@ These skills run periodically — not after every feature. Each one is independe
 
 | # | Skill | Focus |
 |---|-------|-------|
-| 08 | `dev-cycle-refactor-health-check` | Dead code, architectural drift, dependency health, technical debt inventory, documentation gaps. |
-| 09 | `dev-cycle-refactor-efficiency` | Performance bottlenecks, hot path confirmation, algorithmic complexity, resource usage. |
-| 10 | `dev-cycle-refactor-security` | Input handling, authentication gaps, data exposure, dependency vulnerabilities, common attack vectors. |
-| 11 | `dev-cycle-refactor-bug-hunting` | Logic errors, edge cases, error handling gaps, state and timing issues, integration fragility. |
-| 12 | `dev-cycle-refactor-test-coverage` | Untested code, undertested paths, over-mocked tests, weak assertions, integration gaps. |
+| 1 | `dev-cycle-refactor-health-check` | Dead code, architectural drift, dependency health, technical debt inventory, documentation gaps. |
+| 2 | `dev-cycle-refactor-efficiency` | Performance bottlenecks, hot path confirmation, algorithmic complexity, resource usage. |
+| 3 | `dev-cycle-refactor-security` | Input handling, authentication gaps, data exposure, dependency vulnerabilities, common attack vectors. |
+| 4 | `dev-cycle-refactor-bug-hunting` | Logic errors, edge cases, error handling gaps, state and timing issues, integration fragility. |
+| 5 | `dev-cycle-refactor-test-coverage` | Untested code, undertested paths, over-mocked tests, weak assertions, integration gaps. |
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: dev-cycle-implementation
-description: Third step of the development cycle. Use this skill when the user is ready to write code based on a confirmed plan. Triggers when the user says things like "let's implement", "start coding", "begin phase 1", "write the code", or confirms a plan and is ready to proceed. Requires dev-cycle-planning to have been completed and a session plan file to exist in ./docs/. This skill covers code changes and the full test loop.
+description: "[Step 3/7 — Core Cycle] Third step of the development cycle. Use this skill when the user is ready to write code based on a confirmed plan. Triggers when the user says things like "let's implement", "start coding", "begin phase 1", "write the code", or confirms a plan and is ready to proceed. Requires dev-cycle-planning to have been completed and a session plan file to exist in ./docs/. This skill covers code changes and the full test loop.
 ---
 
 # Development Cycle: Implementation
@@ -141,6 +141,23 @@ During implementation, keep `./docs/[task-name].md` current:
 - Log any out-of-scope discoveries under **Out of Scope**
 - Note any hot path candidates touched during implementation
 
+## Completion Checkpoint
+
+When all phases are complete and all tests pass, **stop here**. Do not proceed to documentation automatically.
+
+Present a completion summary to the user:
+- Files created or modified
+- Test results (count passing)
+- Typecheck and lint status
+- Any out-of-scope items logged during implementation
+
+Then explicitly ask the user to:
+1. Review the code changes
+2. Test the feature in the browser or runtime environment
+3. Confirm they are satisfied before continuing
+
+**Do not proceed to documentation until the user gives explicit approval.** Catching issues here avoids re-running documentation, cleanup, and review unnecessarily.
+
 ## Next Step
 
-Once all phases are complete and all tests pass: proceed to **dev-cycle-documentation**.
+Once the user has reviewed, tested, and explicitly approved: proceed to **dev-cycle-documentation**.

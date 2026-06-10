@@ -1,6 +1,6 @@
 ---
 name: dev-cycle-git
-description: Seventh and final step of the development cycle. Use this skill after review is complete and the user is ready to commit and push changes to the repository. Triggers when the user says things like "push the changes", "commit", "let's push", "generate a branch description", or transitions from completed review. Requires dev-cycle-review to have been completed and the user to have confirmed they are satisfied with the changes.
+description: "[Step 7/7 — Core Cycle] Seventh and final step of the development cycle. Use this skill after review is complete and the user is ready to commit and push changes to the repository. Triggers when the user says things like "push the changes", "commit", "let's push", "generate a branch description", or transitions from completed review. Requires dev-cycle-review to have been completed and the user to have confirmed they are satisfied with the changes.
 ---
 
 # Development Cycle: Git & Push

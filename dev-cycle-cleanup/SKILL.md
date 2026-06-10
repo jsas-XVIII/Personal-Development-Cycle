@@ -1,6 +1,6 @@
 ---
 name: dev-cycle-cleanup
-description: Fifth step of the development cycle. Use this skill after documentation is complete. Triggers when the user says things like "run linting", "cleanup", "npm audit", "fix lint errors", "update README", or transitions from completed documentation. Requires dev-cycle-documentation to have been completed and all tests passing. Do not modify any logic or tests during this step.
+description: "[Step 5/7 — Core Cycle] Fifth step of the development cycle. Use this skill after documentation is complete. Triggers when the user says things like "run linting", "cleanup", "npm audit", "fix lint errors", "update README", or transitions from completed documentation. Requires dev-cycle-documentation to have been completed and all tests passing. Do not modify any logic or tests during this step.
 ---
 
 # Development Cycle: Cleanup
@@ -19,20 +19,23 @@ Cleanup is deferred until after implementation and documentation are stable on p
 
 ## Steps — Run in This Order
 
-### 1. Linting
+### 1. Type Check + Linting
 
-Run the project's configured linter (check `package.json` scripts for the lint command):
+Run the TypeScript type checker first, then the linter (check `package.json` scripts for the correct commands):
 
 ```bash
+npm run typecheck
 npm run lint
 ```
+
+Type check errors must be fixed before proceeding — they indicate real type mismatches that tests may not catch (e.g. missing required fields on typed objects in test fixtures).
 
 For each lint error or warning:
 - **Auto-fixable** — run `npm run lint -- --fix` or equivalent and apply fixes
 - **Requires judgment** — present the issue and your recommended fix to the user before changing anything
 - **Suppression** — do not add lint suppression comments (`// eslint-disable`) without explicit user approval. If a suppression seems warranted, explain why and ask first.
 
-Re-run lint after fixes to confirm clean.
+Re-run both after fixes to confirm clean.
 
 ### 2. Dependency Audit
 
@@ -76,11 +79,11 @@ Mark cleanup complete in `./docs/[task-name].md`.
 
 ## Hard Rules
 
-- **Do not change logic** — if a lint rule exposes a real bug, flag it and log it as out of scope; do not fix it here
+- **Do not change logic** — if a lint or type error exposes a real bug, flag it and log it as out of scope; do not fix it here
 - **Do not run `npm audit fix --force`** without explicit user approval
 - **Do not suppress lint warnings** without explicit user approval
 - **Do not rewrite the README** — update only what changed this session
-- **Do not proceed to git/push** if tests are failing after cleanup
+- **Do not proceed to git/push** if typecheck, tests, or lint are failing after cleanup
 
 ## Next Step
 

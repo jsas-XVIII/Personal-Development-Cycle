@@ -1,6 +1,6 @@
 ---
 name: dev-cycle-planning
-description: Second step of the development cycle. Use this skill after dev-cycle-analysis has been completed and the user is ready to plan what to build or change. Triggers when the user says things like "let's plan", "what should we do", "how should we approach this", "break this down", or moves from describing the project into deciding what to do next. Do not write any code during this step. This skill must run before dev-cycle-implementation.
+description: "[Step 2/7 — Core Cycle] Second step of the development cycle. Use this skill after dev-cycle-analysis has been completed and the user is ready to plan what to build or change. Triggers when the user says things like "let's plan", "what should we do", "how should we approach this", "break this down", or moves from describing the project into deciding what to do next. Do not write any code during this step. This skill must run before dev-cycle-implementation.
 ---
 
 # Development Cycle: Planning

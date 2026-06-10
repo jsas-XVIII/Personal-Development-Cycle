@@ -1,6 +1,6 @@
 ---
 name: dev-cycle-refactor-security
-description: Refactor variant of the development cycle focused on security vulnerabilities and unsafe patterns. Use this skill when the user wants to audit the codebase for security issues, unsafe practices, or exposure risks. Triggers when the user says things like "security refactor", "security audit", "check for vulnerabilities", "security pass", "look for security issues", "harden the code", or initiates a refactor session focused on security. Always runs through the full development cycle. Do not fix anything during analysis — produce findings first.
+description: "[Refactor 3/5 — runs full 7-step cycle] Refactor variant of the development cycle focused on security vulnerabilities and unsafe patterns. Use this skill when the user wants to audit the codebase for security issues, unsafe practices, or exposure risks. Triggers when the user says things like "security refactor", "security audit", "check for vulnerabilities", "security pass", "look for security issues", "harden the code", or initiates a refactor session focused on security. Always runs through the full development cycle. Do not fix anything during analysis — produce findings first.
 ---
 
 # Development Cycle: Refactor — Security

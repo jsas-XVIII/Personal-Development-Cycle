@@ -1,6 +1,6 @@
 ---
 name: dev-cycle-refactor-efficiency
-description: Refactor variant of the development cycle focused on performance and efficiency. Use this skill when the user wants to improve speed, reduce resource usage, or address known performance concerns. Triggers when the user says things like "performance refactor", "efficiency pass", "optimize the code", "it's running slow", "let's look at performance", "profile the hot paths", or initiates a refactor session focused on speed or resource usage. Always runs through the full development cycle. Do not optimize anything during analysis — produce findings first.
+description: "[Refactor 2/5 — runs full 7-step cycle] Refactor variant of the development cycle focused on performance and efficiency. Use this skill when the user wants to improve speed, reduce resource usage, or address known performance concerns. Triggers when the user says things like "performance refactor", "efficiency pass", "optimize the code", "it's running slow", "let's look at performance", "profile the hot paths", or initiates a refactor session focused on speed or resource usage. Always runs through the full development cycle. Do not optimize anything during analysis — produce findings first.
 ---
 
 # Development Cycle: Refactor — Efficiency & Performance

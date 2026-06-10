@@ -1,6 +1,6 @@
 ---
 name: dev-cycle-refactor-health-check
-description: Refactor variant of the development cycle focused on overall project health. Use this skill when the user wants to audit the project holistically rather than work on a specific feature. Triggers when the user says things like "health check", "project audit", "check the project", "what's the state of the codebase", "technical debt review", "let's do a health check", or initiates a refactor session without a specific bug or feature in mind. Runs through the full development cycle with a health-focused lens. Do not fix anything during the analysis phase — produce a findings report first.
+description: "[Refactor 1/5 — runs full 7-step cycle] Refactor variant of the development cycle focused on overall project health. Use this skill when the user wants to audit the project holistically rather than work on a specific feature. Triggers when the user says things like "health check", "project audit", "check the project", "what's the state of the codebase", "technical debt review", "let's do a health check", or initiates a refactor session without a specific bug or feature in mind. Runs through the full development cycle with a health-focused lens. Do not fix anything during the analysis phase — produce a findings report first.
 ---
 
 # Development Cycle: Refactor — Health Check

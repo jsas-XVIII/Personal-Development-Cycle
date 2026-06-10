@@ -1,6 +1,6 @@
 ---
 name: dev-cycle-review
-description: Sixth step of the development cycle. Use this skill after cleanup is complete and tests are passing. Triggers when the user says things like "let's review", "review the changes", "look for anything missed", "sanity check", or transitions from completed cleanup. Requires dev-cycle-cleanup to have been completed. This step combines Claude's analysis with the user's own review before pushing to the repository.
+description: "[Step 6/7 — Core Cycle] Sixth step of the development cycle. Use this skill after cleanup is complete and tests are passing. Triggers when the user says things like "let's review", "review the changes", "look for anything missed", "sanity check", or transitions from completed cleanup. Requires dev-cycle-cleanup to have been completed. This step combines Claude's analysis with the user's own review before pushing to the repository.
 ---
 
 # Development Cycle: Review
