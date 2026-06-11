@@ -1,6 +1,6 @@
 ---
 name: dev-cycle-refactor-test-coverage
-description: "[Refactor 5/5 — runs full 7-step cycle] Refactor variant of the development cycle focused on identifying and filling gaps in automated test coverage. Use this skill when the user wants to improve test coverage, find untested code paths, or strengthen weak tests. Triggers when the user says things like "test coverage", "missing tests", "improve tests", "find untested code", "strengthen the test suite", "test coverage pass", or initiates a refactor session focused on testing. Always runs through the full development cycle. Do not write tests during analysis — produce findings first.
+description: "[Refactor 5/5 — light path for Fibonacci 1/2/3, full 7-step cycle for Fibonacci 5+] Refactor variant of the development cycle focused on identifying and filling gaps in automated test coverage. Use this skill when the user wants to improve test coverage, find untested code paths, or strengthen weak tests. Triggers when the user says things like "test coverage", "missing tests", "improve tests", "find untested code", "strengthen the test suite", "test coverage pass", or initiates a refactor session focused on testing. Always runs through the full development cycle. Do not write tests during analysis — produce findings first.
 ---
 
 # Development Cycle: Refactor — Missing Test Coverage
@@ -18,6 +18,26 @@ A passing test suite is not the same as a trustworthy test suite. Tests can pass
 ## Core Principle: Tests Must Earn Trust
 
 A test is only valuable if it would fail when the code it covers is broken. Tests that always pass regardless of what the code does are worse than no tests — they create false confidence.
+
+## Effort Estimation
+
+Before starting, ask the user:
+
+> "What's your Fibonacci estimate for this task? (1, 2, 3, 5, 8, 13...)"
+
+**Fibonacci 1, 2, or 3 → Light Path.** **Fibonacci 5 and above → Full Cycle.**
+
+### Light Path (Fibonacci 1, 2, or 3)
+
+1. **Quick analysis** — read the relevant file(s) and understand the scope. No findings report.
+2. **Implement** — make the focused change.
+3. **Verify** — run `npm test ; npm run lint`. Both must pass.
+4. **Scope check** — compare the actual change against the user's Fibonacci estimate. Confirm the fit in one or two sentences, or flag if the scope grew beyond what the estimate implied.
+5. **Commit** — proceed to `dev-cycle-git`. The Fibonacci value is added to the Refactor Score as normal.
+
+Skip the findings report, planning doc, documentation step, cleanup step, and formal review for light path work.
+
+---
 
 ## When to Run
 

@@ -54,20 +54,20 @@ Present the diff summary and current branch to the user so they can confirm the 
 
 ### 2. Stage Changes
 
-Stage all changes related to this session:
+Stage the files changed during this session by listing them explicitly:
 
 ```bash
-git add .
+git add [file1] [file2] ...
 ```
 
-If there are untracked files that should not be committed (e.g., local config, temp files, build artifacts), flag them to the user before staging. Confirm `.gitignore` is covering what it should.
+Avoid `git add .` — it can sweep in unrelated or untracked files. If there are untracked files that should not be committed (e.g., local config, temp files, build artifacts), flag them to the user before staging. Confirm `.gitignore` is covering what it should.
 
 ### 3. Generate Commit Message
 
-Write a commit message following this structure:
+Write a commit message following this structure. The first line must match the format required by the project's CI (`type(scope): description`):
 
 ```
-[type]: [short summary of what changed] (50 chars or less)
+[type]([scope]): [short summary of what changed] (50 chars or less)
 
 - [specific change 1]
 - [specific change 2]
@@ -76,6 +76,8 @@ Write a commit message following this structure:
 
 Tests: [passing / updated / added]
 ```
+
+Use a short, specific scope (e.g. `powers`, `wizard`, `advancement`, `character`). If the project's CLAUDE.md defines a different commit format, follow that instead.
 
 **Type prefixes:**
 - `feat` — new feature or functionality

@@ -73,6 +73,8 @@ Read the current `README.md` and update it to reflect changes made during this s
 
 Do not rewrite sections unrelated to this session's changes. Keep the README accurate to what the project actually does now.
 
+If this session added, removed, or moved modules/components/services, also update the architecture section of `CLAUDE.md` to match. Same constraint: touch only what this session changed.
+
 ### 5. Update Session Plan
 
 Mark cleanup complete in `./docs/[task-name].md`.

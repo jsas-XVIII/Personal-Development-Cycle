@@ -1,6 +1,6 @@
 ---
 name: dev-cycle-refactor-efficiency
-description: "[Refactor 2/5 — runs full 7-step cycle] Refactor variant of the development cycle focused on performance and efficiency. Use this skill when the user wants to improve speed, reduce resource usage, or address known performance concerns. Triggers when the user says things like "performance refactor", "efficiency pass", "optimize the code", "it's running slow", "let's look at performance", "profile the hot paths", or initiates a refactor session focused on speed or resource usage. Always runs through the full development cycle. Do not optimize anything during analysis — produce findings first.
+description: "[Refactor 2/5 — light path for Fibonacci 1/2/3, full 7-step cycle for Fibonacci 5+] Refactor variant of the development cycle focused on performance and efficiency. Use this skill when the user wants to improve speed, reduce resource usage, or address known performance concerns. Triggers when the user says things like "performance refactor", "efficiency pass", "optimize the code", "it's running slow", "let's look at performance", "profile the hot paths", or initiates a refactor session focused on speed or resource usage. Always runs through the full development cycle. Do not optimize anything during analysis — produce findings first.
 ---
 
 # Development Cycle: Refactor — Efficiency & Performance
@@ -24,6 +24,26 @@ The workflow is:
 2. Runtime profiling to confirm actual bottlenecks (user-driven)
 3. Plan targeted fixes for confirmed bottlenecks
 4. Measure improvement after changes
+
+## Effort Estimation
+
+Before starting, ask the user:
+
+> "What's your Fibonacci estimate for this task? (1, 2, 3, 5, 8, 13...)"
+
+**Fibonacci 1, 2, or 3 → Light Path.** **Fibonacci 5 and above → Full Cycle.**
+
+### Light Path (Fibonacci 1, 2, or 3)
+
+1. **Quick analysis** — read the relevant file(s) and understand the scope. No findings report.
+2. **Implement** — make the focused change.
+3. **Verify** — run `npm test ; npm run lint`. Both must pass.
+4. **Scope check** — compare the actual change against the user's Fibonacci estimate. Confirm the fit in one or two sentences, or flag if the scope grew beyond what the estimate implied.
+5. **Commit** — proceed to `dev-cycle-git`. The Fibonacci value is added to the Refactor Score as normal.
+
+Skip the findings report, planning doc, documentation step, cleanup step, and formal review for light path work.
+
+---
 
 ## When to Run
 

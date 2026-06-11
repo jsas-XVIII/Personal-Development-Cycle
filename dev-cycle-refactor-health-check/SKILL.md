@@ -1,6 +1,6 @@
 ---
 name: dev-cycle-refactor-health-check
-description: "[Refactor 1/5 — runs full 7-step cycle] Refactor variant of the development cycle focused on overall project health. Use this skill when the user wants to audit the project holistically rather than work on a specific feature. Triggers when the user says things like "health check", "project audit", "check the project", "what's the state of the codebase", "technical debt review", "let's do a health check", or initiates a refactor session without a specific bug or feature in mind. Runs through the full development cycle with a health-focused lens. Do not fix anything during the analysis phase — produce a findings report first.
+description: "[Refactor 1/5 — light path for Fibonacci 1/2/3, full 7-step cycle for Fibonacci 5+] Refactor variant of the development cycle focused on overall project health. Use this skill when the user wants to audit the project holistically rather than work on a specific feature. Triggers when the user says things like "health check", "project audit", "check the project", "what's the state of the codebase", "technical debt review", "let's do a health check", or initiates a refactor session without a specific bug or feature in mind. Runs through the full development cycle with a health-focused lens. Do not fix anything during the analysis phase — produce a findings report first.
 ---
 
 # Development Cycle: Refactor — Health Check
@@ -14,6 +14,26 @@ Feature development accumulates invisible debt: dead code, architectural drift, 
 ## Model Recommendation
 
 > **Consider switching to Opus before starting this skill.** The health check requires broad cross-file pattern recognition, architectural judgment, and technical debt assessment across the entire project. Sonnet is sufficient for execution steps later in the cycle, but the analysis phase benefits significantly from Opus on medium to large projects.
+
+## Effort Estimation
+
+Before starting, ask the user:
+
+> "What's your Fibonacci estimate for this task? (1, 2, 3, 5, 8, 13...)"
+
+**Fibonacci 1, 2, or 3 → Light Path.** **Fibonacci 5 and above → Full Cycle.**
+
+### Light Path (Fibonacci 1, 2, or 3)
+
+1. **Quick analysis** — read the relevant file(s) and understand the scope. No findings report.
+2. **Implement** — make the focused change.
+3. **Verify** — run `npm test ; npm run lint`. Both must pass.
+4. **Scope check** — compare the actual change against the user's Fibonacci estimate. Confirm the fit in one or two sentences, or flag if the scope grew beyond what the estimate implied.
+5. **Commit** — proceed to `dev-cycle-git`. The Fibonacci value is added to the Refactor Score as normal.
+
+Skip the findings report, planning doc, documentation step, cleanup step, and formal review for light path work.
+
+---
 
 ## When to Run
 

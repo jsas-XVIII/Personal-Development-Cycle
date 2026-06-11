@@ -1,6 +1,6 @@
 ---
 name: dev-cycle-refactor-bug-hunting
-description: "[Refactor 4/5 — runs full 7-step cycle] Refactor variant of the development cycle focused on finding bugs, logic errors, edge cases, and fragile code. Use this skill when the user wants to proactively hunt for bugs rather than react to them. Triggers when the user says things like "bug hunting", "look for bugs", "find edge cases", "fragile code review", "logic errors", "let's find what's broken", or initiates a refactor session focused on correctness and reliability. Always runs through the full development cycle. Do not fix anything during analysis — produce findings first.
+description: "[Refactor 4/5 — light path for Fibonacci 1/2/3, full 7-step cycle for Fibonacci 5+] Refactor variant of the development cycle focused on finding bugs, logic errors, edge cases, and fragile code. Use this skill when the user wants to proactively hunt for bugs rather than react to them. Triggers when the user says things like "bug hunting", "look for bugs", "find edge cases", "fragile code review", "logic errors", "let's find what's broken", or initiates a refactor session focused on correctness and reliability. Always runs through the full development cycle. Do not fix anything during analysis — produce findings first.
 ---
 
 # Development Cycle: Refactor — Bug Hunting
@@ -18,6 +18,26 @@ Bugs found proactively are far cheaper to fix than bugs found in production. Thi
 ## Core Principle: Understand Before Fixing
 
 Never fix a bug without fully understanding why it occurs and what else might be affected by the fix. A hasty fix in one place can silently break behavior elsewhere.
+
+## Effort Estimation
+
+Before starting, ask the user:
+
+> "What's your Fibonacci estimate for this task? (1, 2, 3, 5, 8, 13...)"
+
+**Fibonacci 1, 2, or 3 → Light Path.** **Fibonacci 5 and above → Full Cycle.**
+
+### Light Path (Fibonacci 1, 2, or 3)
+
+1. **Quick analysis** — read the relevant file(s) and understand the scope. No findings report.
+2. **Implement** — make the focused change.
+3. **Verify** — run `npm test ; npm run lint`. Both must pass.
+4. **Scope check** — compare the actual change against the user's Fibonacci estimate. Confirm the fit in one or two sentences, or flag if the scope grew beyond what the estimate implied.
+5. **Commit** — proceed to `dev-cycle-git`. The Fibonacci value is added to the Refactor Score as normal.
+
+Skip the findings report, planning doc, documentation step, cleanup step, and formal review for light path work.
+
+---
 
 ## When to Run
 

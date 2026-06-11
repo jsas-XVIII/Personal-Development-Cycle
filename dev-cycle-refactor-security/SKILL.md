@@ -1,6 +1,6 @@
 ---
 name: dev-cycle-refactor-security
-description: "[Refactor 3/5 — runs full 7-step cycle] Refactor variant of the development cycle focused on security vulnerabilities and unsafe patterns. Use this skill when the user wants to audit the codebase for security issues, unsafe practices, or exposure risks. Triggers when the user says things like "security refactor", "security audit", "check for vulnerabilities", "security pass", "look for security issues", "harden the code", or initiates a refactor session focused on security. Always runs through the full development cycle. Do not fix anything during analysis — produce findings first.
+description: "[Refactor 3/5 — light path for Fibonacci 1/2/3, full 7-step cycle for Fibonacci 5+] Refactor variant of the development cycle focused on security vulnerabilities and unsafe patterns. Use this skill when the user wants to audit the codebase for security issues, unsafe practices, or exposure risks. Triggers when the user says things like "security refactor", "security audit", "check for vulnerabilities", "security pass", "look for security issues", "harden the code", or initiates a refactor session focused on security. Always runs through the full development cycle. Do not fix anything during analysis — produce findings first.
 ---
 
 # Development Cycle: Refactor — Security
@@ -18,6 +18,26 @@ Security vulnerabilities are often invisible during feature development — they
 ## Core Principle: Fix With Understanding
 
 Never patch a security issue without understanding the root cause. A surface-level fix that does not address the underlying pattern leaves the codebase vulnerable in adjacent areas.
+
+## Effort Estimation
+
+Before starting, ask the user:
+
+> "What's your Fibonacci estimate for this task? (1, 2, 3, 5, 8, 13...)"
+
+**Fibonacci 1, 2, or 3 → Light Path.** **Fibonacci 5 and above → Full Cycle.**
+
+### Light Path (Fibonacci 1, 2, or 3)
+
+1. **Quick analysis** — read the relevant file(s) and understand the scope. No findings report.
+2. **Implement** — make the focused change.
+3. **Verify** — run `npm test ; npm run lint`. Both must pass.
+4. **Scope check** — compare the actual change against the user's Fibonacci estimate. Confirm the fit in one or two sentences, or flag if the scope grew beyond what the estimate implied.
+5. **Commit** — proceed to `dev-cycle-git`. The Fibonacci value is added to the Refactor Score as normal.
+
+Skip the findings report, planning doc, documentation step, cleanup step, and formal review for light path work.
+
+---
 
 ## When to Run
 
