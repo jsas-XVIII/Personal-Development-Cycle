@@ -35,6 +35,20 @@ Before proceeding, ask the user:
 
 ---
 
+## Git Repository Check
+
+Before doing anything else, confirm whether the project has a git repository (this should already be known from the analysis step):
+
+**If no git repository exists:**
+- Do not run any git commands
+- Ask the user: "This project doesn't have a git repository yet. Would you like to initialize one now, or would you prefer to handle that yourself later?"
+- **If the user wants to initialize now:** run `git init`, then proceed through the steps below. Remind the user to create a remote repository (GitHub, GitLab, etc.) and add it as the origin before pushing.
+- **If the user wants to skip:** still complete steps 3 and 5 (commit message and branch description) so the user has them ready for when they do create a repository. Skip steps 1, 2, 4, 6, and 7. Remind the user to delete the session plan file when they're done with it.
+
+**If a git repository exists:** proceed through all steps below as normal.
+
+---
+
 ## Steps — Run in This Order
 
 ### 1. Confirm Status

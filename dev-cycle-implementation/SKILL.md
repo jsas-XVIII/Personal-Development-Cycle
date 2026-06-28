@@ -28,32 +28,52 @@ For each phase:
 
 1. **State the phase** — announce which phase you are starting and what it covers
 2. **Implement the changes** — write the code for that phase only
-3. **Write or update tests** — as noted in the session plan for this phase:
+3. **Run existing tests** — before writing any new tests, run the full test suite to surface any regressions or conflicts with existing behavior:
+   - If all existing tests pass: proceed to step 4
+   - If existing tests fail: work through the **Existing Test Failure** decision below before continuing
+4. **Write or update tests** — as noted in the session plan for this phase:
    - New functionality requires new tests
    - Changed functionality requires updated tests
    - Do not delete tests unless the feature they cover is explicitly being removed
-4. **Run the tests** — execute the test suite after each phase
-5. **Diagnose results** — based on test output:
+5. **Run the full test suite** — execute all tests after writing new or updated tests
+6. **Diagnose results** — based on test output:
+
+### Existing Test Failure
+
+When an existing test fails after implementing phase changes, determine which of these two cases applies — they have different fixes:
+
+**The feature intentionally changed the behavior this test was checking:**
+- The test is now testing something the feature no longer does, or does differently by design
+- Present this clearly to the user: what the test expects, what the feature now does, and why they differ
+- Ask the user to confirm this is an intentional behavioral change before touching the test
+- If confirmed: update the test to match the new behavior with a clear explanation of what changed and why
+- Do not update the test based on your own judgment — always get explicit confirmation first
+
+**The implementation accidentally broke something it should not have:**
+- The test is correct and the code change introduced an unintended regression
+- Fix the code, not the test
+- Do not proceed until the regression is resolved
+
+**If it is not clear which case applies:**
+- Do not guess and do not change anything yet
+- Present your assessment to the user:
+  - What the test expects
+  - What the code now does
+  - Whether the behavioral difference looks intentional or accidental
+  - Your recommendation and why
+- Wait for the user to confirm before making any change
 
 ### Test Loop
 
-After running tests, apply this decision logic:
+After running the full test suite (step 5 above), apply this decision logic:
 
-**If tests pass:**
+**If all tests pass:**
 - Confirm phase is complete
 - Update the session plan file to mark the phase done
 - Move to the next phase or notify the user that all phases are complete
 
 **If tests fail:**
-- Determine whether the failure is in the code or the test:
-  - *Code is wrong* — the implementation does not match the intended behavior. Fix the code, not the test.
-  - *Test is wrong* — the test was written incorrectly, tests the wrong thing, or the expected behavior legitimately changed as part of this task. Fix the test with a clear explanation of why.
-  - *Unclear* — do not guess and do not change anything yet. Present your best assessment to the user:
-    - What the test expects
-    - What the code actually does
-    - Your best hypothesis for why they disagree (code bug, test assumption, or behavior change)
-    - Your recommendation: which you think should change and why
-    - Ask the user to confirm before proceeding. If the user disagrees, follow their direction.
+- Apply the same decision logic as Existing Test Failure above — is this a regression or an intentional behavioral change?
 - Re-run tests after any fix
 - Do not move to the next phase until the current phase passes
 

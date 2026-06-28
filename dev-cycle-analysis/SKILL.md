@@ -35,7 +35,15 @@ Determine scope based on what the user describes:
 
 1. Ask the user what they want to work on if not already clear
 2. Read the relevant files silently — do not summarize each file as you go
-3. When done, provide a context summary covering:
+3. **Check for a git repository** — run `git status` in the project root:
+   - If it succeeds: note "Git repository: present" and record the current branch
+   - If it fails (not a git repo): note "Git repository: not present" — this affects the planning and git steps later in the cycle
+
+4. When done, provide a context summary covering:
+
+   **Git Repository**
+   - Present or not present
+   - If present: current branch name
 
    **Overview**
    - What the relevant code currently does
@@ -65,7 +73,7 @@ Determine scope based on what the user describes:
    - Number of passing and failing tests
    - If tests are failing: list which ones and note clearly that these are pre-existing failures — they must not be confused with failures introduced during implementation
 
-4. **Run the test suite** to establish the baseline:
+5. **Run the test suite** to establish the baseline:
 
    ```bash
    npm test
@@ -74,7 +82,7 @@ Determine scope based on what the user describes:
    - If all tests pass: note the count and proceed
    - If any tests are failing: present them clearly to the user. Do not proceed to planning until the user explicitly acknowledges the pre-existing failures and confirms how to handle them. Options are: fix them before starting the session, note them as known failures to ignore during the test loop, or cancel the session.
 
-5. Confirm with the user that context is sufficient before moving to planning
+6. Confirm with the user that context is sufficient before moving to planning
 
 ## Hard Rules
 

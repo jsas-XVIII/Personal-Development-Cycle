@@ -47,11 +47,12 @@ Establish a clear, agreed-upon plan before any implementation begins. Unplanned 
 
 8. **Present the full plan** and ask for confirmation before proceeding
 
-9. **Confirm working branch** — after the plan is confirmed, check the current branch before writing the session plan:
-   - Run `git branch --show-current`
-   - If on `main` or `master`: stop. Do not proceed to implementation on this branch. Ask the user to confirm or create a feature branch. Suggest a name derived from the task using the same type prefix as the planned commit type — e.g., `feat/add-user-auth`, `fix/null-check-on-submit`, `refactor/extract-auth-middleware`.
-   - If already on a feature branch: confirm it matches the current task. If the branch name looks unrelated, flag it and ask the user to confirm before proceeding.
-   - Record the confirmed branch name in the session plan file.
+9. **Confirm working branch** — after the plan is confirmed, check git status before writing the session plan:
+   - **If no git repository was detected during analysis:** skip this step. Note "No git repository" in the session plan file where the branch name would go. The git step at the end of the cycle will handle repository initialization if the user decides to create one.
+   - **If a git repository is present:** run `git branch --show-current` and apply the following:
+     - If on `main` or `master`: stop. Do not proceed to implementation on this branch. Ask the user to confirm or create a feature branch. Suggest a name derived from the task using the same type prefix as the planned commit type — e.g., `feat/add-user-auth`, `fix/null-check-on-submit`, `refactor/extract-auth-middleware`.
+     - If already on a feature branch: confirm it matches the current task. If the branch name looks unrelated, flag it and ask the user to confirm before proceeding.
+     - Record the confirmed branch name in the session plan file.
 
 ## Collaboration Rules
 
