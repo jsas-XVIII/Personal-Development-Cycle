@@ -151,7 +151,6 @@ During `dev-cycle-implementation` for performance changes:
 - Make one optimization at a time — do not batch multiple changes into one phase
 - Measure after each change to confirm improvement and catch regressions
 - If an optimization does not produce measurable improvement, revert it — complexity is not worth it without gain
-- Add a comment to every optimized function explaining what was changed and why
 
 ## Hard Rules
 
@@ -165,4 +164,4 @@ During `dev-cycle-implementation` for performance changes:
 
 Once findings are reviewed and priorities agreed: proceed to **dev-cycle-planning** with performance findings as input.
 
-The git skill will reset `Refactor Score` to `0 / 34` in `ROADMAP.md` automatically when it detects this was a refactor cycle.
+The git skill will reset `Refactor Score` to `0 / 34` in `ROADMAP.md` automatically when it detects this was a **full** refactor cycle (Fibonacci 5+). Light path refactor work (Fibonacci 1/2/3) adds to the score as normal.

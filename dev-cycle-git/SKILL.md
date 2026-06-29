@@ -153,11 +153,13 @@ After a successful push, update `ROADMAP.md` in the project root:
 
 First, determine whether this session was a **refactor cycle** (triggered by skills 08–12) or a **standard feature cycle**.
 
-**If this was a refactor cycle:** Reset the score to zero:
+**If this was a full refactor cycle (Fibonacci 5+):** Reset the score to zero:
 
 ```
 Refactor Score: 0 / 34
 ```
+
+**If this was a light path refactor cycle (Fibonacci 1, 2, or 3):** Treat it like a standard feature cycle — read the current `Refactor Score` and add the session's Fibonacci value. Light path refactors are targeted fixes, not a full debt-clearing pass, so they do not earn a reset.
 
 **If this was a standard feature cycle:** Read the current `Refactor Score` from `ROADMAP.md` and add the session's approved Fibonacci value from the session plan file:
 

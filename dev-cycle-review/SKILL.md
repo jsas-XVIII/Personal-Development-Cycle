@@ -38,7 +38,7 @@ Work through the changed files systematically. For each file changed during this
 
 ### Documentation Review
 - Are comments accurate to what the code actually does?
-- Are timestamps and author attribution present on all changed functions?
+- If no git repository: are timestamps and author attribution present on all changed functions?
 - Are any TODO comments actionable and clear?
 
 ### Hot Path Review

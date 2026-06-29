@@ -163,4 +163,4 @@ When moving to `dev-cycle-planning` after the health check:
 
 Once the findings report is reviewed and priorities are agreed: proceed to **dev-cycle-planning** with the health check findings as input.
 
-The git skill will reset `Refactor Score` to `0 / 34` in `ROADMAP.md` automatically when it detects this was a refactor cycle.
+The git skill will reset `Refactor Score` to `0 / 34` in `ROADMAP.md` automatically when it detects this was a **full** refactor cycle (Fibonacci 5+). Light path refactor work (Fibonacci 1/2/3) adds to the score as normal.
